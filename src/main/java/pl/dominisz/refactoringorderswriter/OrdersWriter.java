@@ -9,7 +9,12 @@ public class OrdersWriter {
 
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
+        sb.append(getContentForOrders());
+        return sb.append("]}").toString();
+    }
 
+    private String getContentForOrders() {
+        StringBuffer sb = new StringBuffer();
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);
             sb.append(getContentForOrder(order));
@@ -18,8 +23,7 @@ public class OrdersWriter {
                 sb.append(", ");
             }
         }
-
-        return sb.append("]}").toString();
+        return sb.toString();
     }
 
     private String getContentForOrder(Order order) {
