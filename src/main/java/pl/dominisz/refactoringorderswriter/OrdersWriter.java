@@ -13,10 +13,10 @@ public class OrdersWriter {
         for (int i = 0; i < orders.getOrdersCount(); i++) {
             Order order = orders.getOrder(i);
             sb.append(getContentForOrder(order));
-        }
 
-        if (orders.getOrdersCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
+            if (i < orders.getOrdersCount() - 1) {
+                sb.append(", ");
+            }
         }
 
         return sb.append("]}").toString();
@@ -32,14 +32,13 @@ public class OrdersWriter {
             Product product = order.getProduct(j);
 
             sb.append(getContentForProduct(product));
+
+            if (j < order.getProductsCount() -1) {
+                sb.append(", ");
+            }
         }
 
-        if (order.getProductsCount() > 0) {
-            sb.delete(sb.length() - 2, sb.length());
-        }
-
-        sb.append("]");
-        sb.append("}, ");
+        sb.append("]}");
 
         return sb.toString();
     }
@@ -64,7 +63,7 @@ public class OrdersWriter {
         sb.append(", ");
         sb.append("\"currency\": \"");
         sb.append(product.getCurrency());
-        sb.append("\"}, ");
+        sb.append("\"}");
 
         return sb.toString();
     }
