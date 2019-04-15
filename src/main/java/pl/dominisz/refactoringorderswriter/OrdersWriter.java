@@ -14,7 +14,7 @@ public class OrdersWriter {
             Order order = orders.getOrder(i);
             sb.append("{");
             sb.append("\"id\": ");
-            sb.append(order.getOrderId());
+            sb.append(order.getId());
             sb.append(", ");
             sb.append("\"products\": [");
             for (int j = 0; j < order.getProductsCount(); j++) {
