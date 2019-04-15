@@ -32,6 +32,13 @@ public class OrdersWriter {
         sb.append(order.getId());
         sb.append(", ");
         sb.append("\"products\": [");
+        sb.append(getContentForProducts(order));
+        sb.append("]}");
+        return sb.toString();
+    }
+
+    private String getContentForProducts(Order order) {
+        StringBuffer sb = new StringBuffer();
         for (int j = 0; j < order.getProductsCount(); j++) {
             Product product = order.getProduct(j);
 
@@ -41,9 +48,6 @@ public class OrdersWriter {
                 sb.append(", ");
             }
         }
-
-        sb.append("]}");
-
         return sb.toString();
     }
 
