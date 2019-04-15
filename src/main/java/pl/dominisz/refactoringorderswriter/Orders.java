@@ -1,4 +1,4 @@
-package com.odde;
+package pl.dominisz.refactoringorderswriter;
 
 import java.util.ArrayList;
 import java.util.List;

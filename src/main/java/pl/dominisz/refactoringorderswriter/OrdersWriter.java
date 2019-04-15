@@ -1,4 +1,4 @@
-package com.odde;
+package pl.dominisz.refactoringorderswriter;
 
 public class OrdersWriter {
     private Orders orders;

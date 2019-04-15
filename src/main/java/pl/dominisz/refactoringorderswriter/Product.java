@@ -1,4 +1,4 @@
-package com.odde;
+package pl.dominisz.refactoringorderswriter;
 
 public class Product {
     public static final int SIZE_NOT_APPLICABLE = -1;
