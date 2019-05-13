@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Product> products = new ArrayList<Product>();
+    private List<Product> products = new ArrayList<>();
     private int id;
 
     public Order(int id) {
         this.id = id;
     }
 
-    public int getOrderId() {
+    public int getId() {
         return id;
     }
 
@@ -19,11 +19,11 @@ public class Order {
         return products.size();
     }
 
-    public Product getProduct(int j) {
-        return products.get(j);
+    public Product getProduct(int index) {
+        return products.get(index);
     }
 
-    public void AddProduct(Product product) {
+    public void addProduct(Product product) {
         products.add(product);
     }
 }

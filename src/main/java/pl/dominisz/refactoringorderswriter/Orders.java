@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Orders {
-    private List<Order> orders = new ArrayList<Order>();
+    private List<Order> orders = new ArrayList<>();
 
-    public void AddOrder(Order order) {
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
@@ -14,7 +14,7 @@ public class Orders {
         return orders.size();
     }
 
-    public Order getOrder(int i) {
-        return orders.get(i);
+    public Order getOrder(int index) {
+        return orders.get(index);
     }
 }
